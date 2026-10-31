@@ -1,5 +1,11 @@
 # Portrait Alternatives
 
+## Chosen direction
+
+- Chosen branch: C, with a warm cheek gradient and Bézier-curved facial expression.
+- C best met its criterion of communicating warmth despite unusual colors. Compared with A's bead grid and B's moon-and-flower arrangement, the gradient and curved features made the face feel more expressive while staying clear as a portrait.
+- A and B remain available on their respective branches.
+
 ## A
 
 - Explored on branch A. The build used a regular bead grid rather than the planned angular tiles, hair, clothing, and spiky halo; it still created a lively repeated pattern, but it did not read as a full portrait.
