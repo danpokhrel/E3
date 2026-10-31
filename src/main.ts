@@ -5,7 +5,7 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute("aria-label", "A lively bead-covered face with a patterned halo");
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -16,6 +16,24 @@ head.setAttribute("fill", "#f3cf87");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
+
+for (let row = 0; row < 10; row++) {
+  for (let column = 0; column < 12; column++) {
+    const bead = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle",
+    );
+    bead.setAttribute("cx", String(42 + column * 10.5));
+    bead.setAttribute("cy", String(38 + row * 13.5));
+    bead.setAttribute("r", String(column % 3 === 0 ? 2.4 : 1.8));
+    bead.setAttribute(
+      "fill",
+      (row + column) % 3 === 0 ? "#d88958" : "#b85c72",
+    );
+    bead.setAttribute("opacity", "0.72");
+    face.append(bead);
+  }
+}
 
 const leftEye = document.createElementNS(
   "http://www.w3.org/2000/svg",
