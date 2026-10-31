@@ -1,3 +1,10 @@
+// @deno-types="./asset-url.d.ts"
+import moonUrl from "./assets/moon.svg?no-inline";
+// Source URL: ./assets/moon.svg; creator: me; license: original artwork made in inkscape.
+// @deno-types="./asset-url.d.ts"
+import flowerUrl from "./assets/flower.svg?no-inline";
+// Source URL: ./assets/flower.svg; creator: me; license: original artwork made in inkscape.
+
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
@@ -5,7 +12,7 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute("aria-label", "A friendly face framed by a moon and flower");
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -16,6 +23,28 @@ head.setAttribute("fill", "#f3cf87");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
+
+const moonImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+moonImage.setAttribute("href", moonUrl);
+moonImage.setAttribute("x", "14");
+moonImage.setAttribute("y", "10");
+moonImage.setAttribute("width", "44");
+moonImage.setAttribute("height", "44");
+face.append(moonImage);
+
+const flowerImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+flowerImage.setAttribute("href", flowerUrl);
+flowerImage.setAttribute("x", "132");
+flowerImage.setAttribute("y", "135");
+flowerImage.setAttribute("width", "48");
+flowerImage.setAttribute("height", "48");
+face.append(flowerImage);
 
 const leftEye = document.createElementNS(
   "http://www.w3.org/2000/svg",
